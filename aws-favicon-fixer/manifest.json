@@ -1,0 +1,33 @@
+{
+  "manifest_version": 3,
+  "name": "AWS Favicon Fixer",
+  "version": "1.0",
+  "description": "Change the favicon of AWS X-Ray",
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "icons/favicon-xray.svg"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://*.console.aws.amazon.com/cloudwatch/*"
+      ],
+      "run_at": "document_end",
+      "js": [
+        "content.js"
+      ]
+    }
+  ],
+  "icons": {
+    "16": "icons/icon16.png",
+    "32": "icons/icon32.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  }
+}
